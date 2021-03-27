@@ -6,33 +6,35 @@ import styled from "styled-components";
 import { BasicStyles, Description, Image, Hide } from "../styles";
 //framer motion
 import { motion } from "framer-motion";
-
+import { titleAnim, fade, photoAnim } from "../animation";
+import Wave from "./Wave";
 const AboutSection = () => {
   return (
     <BasicStyles>
       <Description>
         <motion.div>
           <Hide>
-            <motion.h2>We work to make</motion.h2>
+            <motion.h2 variants={titleAnim}>We work to make</motion.h2>
           </Hide>
           <Hide>
-            <motion.h2>
+            <motion.h2 variants={titleAnim}>
               your<span> dreams </span>come
             </motion.h2>
           </Hide>
           <Hide>
-            <motion.h2> true.</motion.h2>
+            <motion.h2 variants={titleAnim}> true.</motion.h2>
           </Hide>
         </motion.div>
-        <p>
+        <motion.p variants={fade}>
           Contact us for any photography or videography that you have. We have
           professionals with amazing skills.{" "}
-        </p>
-        <button>Contact Us</button>
+        </motion.p>
+        <motion.button variants={fade}>Contact Us</motion.button>
       </Description>
       <Image>
-        <img src={home1} alt="guy with a camera" />
+        <motion.img variants={photoAnim} src={home1} alt="guy with a camera" />
       </Image>
+      <Wave />
     </BasicStyles>
   );
 };
