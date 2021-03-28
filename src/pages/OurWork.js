@@ -12,7 +12,6 @@ import {
   slider,
   pageAnimation,
   fade,
-  scrollReveal,
   photoAnim,
   lineAnim,
 } from "../animation";
@@ -44,12 +43,7 @@ const OurWork = () => {
           </Hide>
         </Link>
       </Movie>
-      <Movie
-        ref={element}
-        variants={scrollReveal}
-        animate={controls}
-        initial="hidden"
-      >
+      <Movie ref={element} variants={fade} animate={controls} initial="hidden">
         <h2>The Racer</h2>
         <motion.div variants={lineAnim} className="line"></motion.div>
         <Link to="/work/the-racer">
@@ -58,7 +52,7 @@ const OurWork = () => {
       </Movie>
       <Movie
         ref={element2}
-        variants={scrollReveal}
+        variants={fade}
         animate={controls2}
         initial="hidden"
       >
